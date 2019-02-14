@@ -9,10 +9,10 @@ def S(D, percent, days, iteration):
 def V(D, percent, days, iteration):
     return D * (((1 + (percent * days) / (iteration * 360)) ** iteration) - 1)
 
-deposit = 40000.0 # float(raw_input("Введите сумму депозита: >> "))
-period  = 5 # int(raw_input("Введите строк (мес.): >> "))
-percent = 0.18 # int(raw_input("Введите процентную ставку (%): >> ")) / 100.0
-start   = '2019.02.14'.split('.') # raw_input("Введите дату взноса (гггг.мм.дд): >> ").split('.')
+deposit = float(raw_input("Введите сумму депозита: >> "))
+period  = int(raw_input("Введите строк (мес.): >> "))
+percent = int(raw_input("Введите процентную ставку (%): >> ")) / 100.0
+start   = raw_input("Введите дату взноса (гггг.мм.дд): >> ").split('.')
 
 if len(start) != 3:
     print "Неверный формат даты"
