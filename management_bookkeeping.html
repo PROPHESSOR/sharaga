@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Management</title>
+    <style>
+        input:read-only {
+            text-align: right;
+        }
+
+        input:read-only::placeholder {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <form> -->
+        Денежные поступления = <input type="text" id="1" placeholder="Основной доход"> + <input type="text" id="2" placeholder="Инв. деятельность"> + <input type="text" placeholder="Непредвиденные поступления" id="3"> = <input type="text" readonly tabindex="-1" placeholder="Денежные поступления" id="4"><br/>
+        НДС = <input type="text" placeholder="Цены с НДС" id="5"> / 6 = <input type="text" readonly tabindex="-1" id="6" placeholder="НДС"><br/>
+        Денежный доход = <input type="text" readonly tabindex="-1" placeholder="Денежные поступления" id="7"> - <input type="text" readonly tabindex="-1" placeholder="НДС" id="8"> - <input type="text" placeholder="Акцизный сбор" id="9"> - (<input type="text" placeholder="Пошлина" id="10"> * <input type="text" placeholder="Курс валюты" id="11">) = <input type="text" placeholder="Денежный доход" readonly tabindex="-1" id="12"><br/>
+        Валовой доход = <input type="text" placeholder="Денежный доход" readonly tabindex="-1" id="13"> - <input type="text" placeholder="Товарно-материальные ценности" id="14"> - <input type="text" placeholder="Амортизация" id="15"> - <input type="text" placeholder="Прочие траты" id="16"> = <input type="text" placeholder="Валовой доход" readonly tabindex="-1" id="17"><br/>
+        Чистый доход = <input type="text" readonly tabindex="-1" placeholder="Валовой доход" id="18"> - <input type="text" placeholder="Зарплата" id="19"> = <input type="text" readonly tabindex="-1" placeholder="Чистый доход" id="20"><br/>
+        Балансовая прибыль = <input type="text" readonly tabindex="-1" placeholder="Чистый доход" id="21"> - (<input type="text" readonly tabindex="-1" placeholder="Зарплата" id="22"> * 22%) = <input type="text" readonly tabindex="-1" placeholder="Балансовая прибыль" id="23"><br/>
+        Прибыль = <input type="text" readonly tabindex="-1" placeholder="Балансовая прибыль" id="24"> - <input type="text" placeholder="Налог на землю" id="25"> = <input type="text" readonly tabindex="-1" placeholder="Прибыль" id="26"><br/>
+        Чистая прибыль = <input type="text" readonly tabindex="-1" placeholder="Прибыль" id="27"> - (<input type="text" readonly tabindex="-1" placeholder="Прибыль" id="28"> * 18%) = <input type="text" readonly tabindex="-1" placeholder="Чистая прибыль" id="29"><br/>
+        Неделимая прибыль = <input type="text" readonly tabindex="-1" placeholder="Чистая прибыль" id="30"> - <input type="text" placeholder="Штрафы" id="31"> - <input type="text" placeholder="Резервный фонд" id="32"> = <input type="text" readonly tabindex="-1" placeholder="Неделимая прибыль" id="33"><br/>
+        <button onclick="calc()">Посчитать</button>
+    <!-- </form> -->
+    <script>
+        function getVal(id) {
+            return Number(eval(document.getElementById(id).value)) || 0;
+        }
+
+        function setVal(id, value) {
+            document.getElementById(id).value = Number(value).toFixed(2);
+        }
+
+        function calc() {
+            setVal(4, getVal(1) + getVal(2) + getVal(3)); // = Денежные поступления
+            setVal(6, getVal(5) / 6); // = НДС
+            setVal(7, getVal(4)); // Денежный доход = Денежные поступления
+            setVal(8, getVal(6)); // - НДС
+            setVal(12, getVal(7) - getVal(8) - getVal(9) - (getVal(10) * getVal(11))); // = Денежный доход
+            setVal(13, getVal(12)); // Валовый доход = Денежный доход
+            setVal(17, getVal(13) - getVal(14) - getVal(15) - getVal(16)); // = Валовый доход
+            setVal(18, getVal(17)); // Чистый доход = Валовый доход
+            setVal(20, getVal(18) - getVal(19)); // = Чистый доход
+            setVal(21, getVal(20)); // Балансовая прибыль = Чистый доход
+            setVal(22, getVal(19)); // - Зарплата
+            setVal(23, getVal(21) - (getVal(22) * 0.22)); // = Балансовая прибыль
+            setVal(24, getVal(23)); // Прибыль = Балансовая прибыль
+            setVal(26, getVal(24) - getVal(25)); // = Прибыль
+            setVal(27, getVal(26)); // Чистая прибыль = Прибыль
+            setVal(28, getVal(26)); // Чистая прибыль = Прибыль
+            setVal(29, getVal(27) - (getVal(28) * 0.18)); // = Чистая прибыль
+            setVal(30, getVal(29)); // Неделимая прибыль = Чистая прибыль
+            setVal(33, getVal(30) - getVal(31) - getVal(32)); // = Неделимая прибыль
+        }
+    </script>
+    <!-- <table border=1>
+        <tr>
+            <td>Основновная деятельность</td>
+            <td>Инвестиции</td>
+            <td>Непредвиденные поступления</td>
+        </tr>
+        <tr>
+            <td colspan="5">Денежные поступления</td>
+        </tr>
+        <tr>
+            <td class="vertical"><span>НДС</span></td>
+            <td class="vertical"><span>АС</span></td>
+            <td class="vertical"><span>Пограничный налог</span></td>
+            <td colspan="2">Денежный доход</td>
+        </tr>
+        <tr>
+            <td class="vertical"><span>Материальные траты</span></td>
+            <td class="vertical"><span>Амортизация</span></td>
+            <td class="vertical"><span>Другие траты</span></td>
+            <td colspan="2">Валовой доход</td>
+        </tr>
+        <tr>
+            <td class="vertical"><span>Оплата труда</span></td>
+            <td colspan="4">Чистый доход</td>
+        </tr>
+        <tr>
+            <td class="vertical"><span>Налог на зарплату</span></td>
+            <td colspan="4">Балансный доход</td>
+        </tr>
+        <tr>
+            <td class="vertical"><span>Налог на прибыль</span></td>
+            <td class="vertical"><span>Налог на землю</span></td>
+            <td class="vertical"><span></span></td>
+            <td class="vertical"><span></span></td>
+            <td>Чистая прибыль</td>
+        </tr>
+        <tr>
+            <td class="vertical"><span>Штрафы</span></td>
+            <td class="vertical"><span>Фонды</span></td>
+            <td colspan="3">Нераздельная прибыль</td>
+        </tr>
+    </table> -->
+    <!-- <div class="flow">
+        <div id="flow"></div>
+        <div class="addflow">
+            <select>
+                <option value="oprational">Операционный доход</option>
+                <option value="investitional">Инвестиционный доход</option>
+                <option value="financional">Финансовый доход</option>
+                <option value="overoperational">Надоперационный доход</option>
+                <option value="pdv">ПВД</option>
+                <option value="az">АЗ</option>
+                <option value="vm">ВМ</option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+        </div>
+        <button class="addbtn" onclick="add()"></button>
+    </div> -->
+
+    <script>
+    //
+    </script>
+</body>
+
+</html>

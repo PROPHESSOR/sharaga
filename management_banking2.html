@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+    }
+    </style>
+</head>
+<body>
+    <input type="number" placeholder="Период" id="period" />
+    <input type="number" placeholder="Начальная стоимость" id="base">
+    <input type="number" placeholder="Ставка" id="percent">
+    <input type="number" placeholder="Аннуитет" id="ann"><br/>
+    <button onclick="calculate()">Рассчитать</button>
+
+    <table>
+        <thead>
+            <tr><th>Период</th><th>Тело кредита</th><th>Сумма кредита</th><th>Процент</th><th>Аннуитет</th><th>Конечный баланс кредита</th></tr>
+        </thead>
+        <tbody id="table">
+
+        </tbody>
+    </table>
+
+
+    <script>
+    const table      = document.querySelector('#table');
+    const eperiod    = document.querySelector('#period');
+    const ebase      = document.querySelector('#base');
+    const epercent   = document.querySelector('#percent');
+    const eann       = document.querySelector('#ann');
+
+    function validate() {
+        if(Number(eperiod.value) <= 0) alert('Неверный период');
+        else if(Number(ebase.value) <= 0) alert('Неверное тело кредита');
+        else if(Number(epercent.value) <= 0 || Number(epercent.value) > 100) alert('Неверная кредитная ставка');
+        else if(Number(eann.value) <= 0) alert('Неверное значение аннуитета');
+        else return true;
+        return false;
+    }
+
+    const to2 = x => Number(x.toFixed(2));
+
+    function calculate() {
+        if(!validate()) return;
+
+        const period = Number(eperiod.value);
+        const base = Number(ebase.value);
+        const percent = Number(epercent.value);
+        const ann = Number(eann.value);
+
+        let output = '';
+        let credit = base;
+
+        for(let month = 0; month < period; month++) {
+            output += `<tr>`;
+
+            output += `<td>${month + 1}</td>`;
+            output += `<td>${to2(credit)}</td>`;
+            
+            const tpercent = to2((to2(credit) * (to2(percent) / 100) * 30) / 360);
+
+            output += `<td>${to2(to2(ann) - to2(tpercent))}</td>`;
+
+            output += `<td>${to2(tpercent)}</td>`;
+
+            output += `<td>${to2(ann)}</td>`;
+
+            credit -= to2(to2(ann) - to2(tpercent));
+
+            output += `<td>${to2(credit)}</td>`;
+
+            output += `</tr>`;
+        }
+
+        table.innerHTML = output;
+    }
+    </script>
+</body>
+</html>

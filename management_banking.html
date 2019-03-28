@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banking</title>
+    <style>
+        input:read-only {
+            color: blue;
+        }
+
+        td {
+            /* border: 1px solid black; */
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return false">
+        <label>Размер кредита:      <input type="number"    id="credit"             ></label><br/>
+        <label>Дата выдачи кредита: <input type="date"      id="firstdate"          ></label><br/>
+        <label>Количество месяцев:  <input type="number"    id="month"              ></label><br/>
+        <label>Дата оплаты кредита: <input type="date"      id="seconddate" ></label><br/>
+        <label>Кредитная ставка:    <input type="number"    id="percent" value="29" style="width: 25pt">% годовых</label><br/>
+        <label>База начисления:     <select id="base">
+            <option value="ff">Факт/факт</option>
+            <option value="f360">Факт/360</option>
+            <option value="30360">30/360</option>
+        </select></label><br/>
+        <button onclick="calculate()">Рассчитать</button>
+        <table id="table">
+            <!--  -->
+        </table>
+    </form>
+
+    <script>
+    const $ = (a, b) => document.querySelector(a, b);
+
+    const calcSecondDate = () => {
+        const firstdate = $("#firstdate").value;
+        if(!firstdate) return;
+        const month = $("#month").value;
+        const seconddate = new Date(firstdate);
+        seconddate.setMonth(seconddate.getMonth() + month);
+        $("#seconddate").value = seconddate.toISOString().substr(0, 10);
+    };
+
+    const getDaysBetweenDates = (date1, date2) => (date2 - date1) / (1000 * 3600 *24);
+
+    const calculate = () => {
+        //calcSecondDate();
+        const firstdate     = new Date($("#firstdate").value);
+        const month         = Number($("#month").value);
+        const seconddate    = new Date($("#seconddate").value);
+        const credit        = Number($("#credit").value);
+        const percent       = Number($("#percent").value);
+        const base          = $("#base").value;
+
+        if(month <= 0)          return alert("Ошибка в количестве месяцев");
+        if(isNaN(firstdate))    return alert("Ошибка в дате выдачи кредита");
+        if(isNaN(seconddate))   return alert("Ошибка в дате оплаты кредита");
+        if(credit <= 0)         return alert("Ошибка в размере кредита");
+        if(percent <= 0
+        || percent > 100)       return alert("Ошибка в размере кредитной ставки");
+
+        switch(base) {
+            case "ff": {
+                const tmppercent = (credit * (percent / 100) * getDaysBetweenDates(firstdate, seconddate)) / 365;
+
+                $("#table").innerHTML = `<tr><td>Насчитанный процент</td><td width="100%">${tmppercent.toFixed(2)}</td></tr>
+                                         <tr><td>Сумма для оплаты</td><td width="100%"><b>${(tmppercent + credit).toFixed(2)}</b></td></tr>
+                                         <tr><td colspan="2">Формула: (сумма_кредита * (кредитная_ставка / 100) * количество_дней_между_датами) / 365</td></tr>`;
+                break;
+            }
+            case "f360": {
+                const tmppercent = (credit * (percent / 100) * getDaysBetweenDates(firstdate, seconddate)) / 360;
+
+                $("#table").innerHTML = `<tr><td>Насчитанный процент</td><td>${tmppercent.toFixed(2)}</td></tr>
+                                         <tr><td>Сумма для оплаты</td><td><b>${(tmppercent + credit).toFixed(2)}</b></td></tr>
+                                         <tr><td colspan="2">Формула: (сумма_кредита * (кредитная_ставка / 100) * количество_дней_между_датами) / 360</td></tr>
+                                         <tr><td colspan="2">Количество дней: ${getDaysBetweenDates(firstdate, seconddate)}</td></tr>`;
+                break;
+            }
+            case "30360": {
+                const tmppercent = (credit * (percent / 100) * (month * 30)) / 360;
+
+                $("#table").innerHTML = `<tr><td>Насчитанный процент</td><td>${tmppercent.toFixed(2)}</td></tr>
+                                         <tr><td>Сумма для оплаты</td><td><b>${(tmppercent + credit).toFixed(2)}</b></td></tr>
+                                         <tr><td colspan="2">Формула: (сумма_кредита * (кредитная_ставка / 100) * (количество_месяцев * 30)) / 360</td></tr>`;
+                break;
+            }
+            default:
+                return alert("Ошибка в базе начисления кредита");
+        };
+
+        const daysBetween = getDaysBetweenDates(firstdate, seconddate);
+        console.log("daysBetween", daysBetween);
+    }
+
+    $("#month").addEventListener("keyup", calcSecondDate);
+
+    </script>
+</body>
+</html>
