@@ -5,6 +5,18 @@ def percent(x):
     return float(x) / 100.0
 
 def calculate(KB, TBp, BPp, CMp, duty, OMPp, AZp, overprice, USD=27.06, PDVp=20):
+    '''
+    KB      - Контрактная стоимость
+    TBp     - Процент транспортных затрат
+    BPp     - Процент посредникам
+    CMp     - Процент страховки
+    duty    - Процент пошлины
+    OMPp    - Процент работе пограничников
+    AZp     - Процент акцизный сбор
+    Прибыль - Процент желаемой прибыли
+    [USD]   - Курс доллара
+    [PDBp]  - Процент ПДВ
+    '''
     TB = KB * percent(TBp)
     print 'TB =', TB
     BP = (KB + TB) * percent(BPp) 
