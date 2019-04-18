@@ -478,3 +478,49 @@ Windows:
 > POSIX ("позикс") - Portation Operating System Interface
 
 Перед выполнение команды SET, нужно разрешить её выполнение в политиках
+
+bootrec (win7+):
+- boot/bootrec.exe
+- /fixmbr
+- /fixboot
+- Восстанавливает существующие
+
+bootsect:
+- /nt60 (win7; 50 - xp)
+- /ntXX DRIVE:\
+- Вместо C:\ можно написать SYS (авто)
+- Создание нового загрузочного раздела
+
+
+bootrec /SeanOs
+bootrec /RebuildBCD
+
+Работа с vmdk
+
+## Перенос системных файлов в Windows
+
+- Documents and Settings
+  - %UserProfile%
+    - TEMP
+    - Desktop
+    - Documents
+- Program Files
+- Windows
+  - TEMP
+- %UserProfile%
+
+Команды для управления реестром:
+- REG (console)
+- regedit (GUI)
+
+BAT:
+```
+mkdir D:\Home\Desktop
+mkdir D:\Home\Documents
+
+xcopy %UserProfile%\Desktop D:\Home\Desktop /s /e /y
+xcopy %UserProfile%\Documents D:\Home\Documents /s /e /y
+
+REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v Desktop /t REG_SZ /d "D:\Home\Desktop" /f
+REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v Documents /t REG_SZ /d "D:\Home\Documents" /f
+```
