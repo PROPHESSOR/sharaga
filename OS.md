@@ -524,3 +524,60 @@ xcopy %UserProfile%\Documents D:\Home\Documents /s /e /y
 REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v Desktop /t REG_SZ /d "D:\Home\Desktop" /f
 REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v Documents /t REG_SZ /d "D:\Home\Documents" /f
 ```
+
+
+## Реестр Windows
+
+Предшественниками реестра были и остаются конфигурационные файлы:
+- .cfg
+- .config
+- .ini - Файл инициализации
+
+3 Главных .ini файла Windows:
+- system.ini
+- win.ini
+- winfile.ini
+
+Появление реестра обусловлено:
+- Необходимостью централизованного сбора всех настроек системы в одном месте
+- С базой данных проще работать
+- Легко организовать многопользовательскую среду
+- Реестр позволяет использовать технологию Plug-and-Play (автоматическая настройка оборудование), так как информация про оборудования хранится в ветке реестра
+
+Реестр хранится в .dat файлах (изначально reg.dat).
+Сейчас эти 5 базовых файлов, в которых хранятся ветки реестра, находятся в папке system32:
+1. HKEY\_CLASSES\_ROOT - Зарегистрированные расширения файлов, ActiveX элементы
+2. HKEY\_CURRENT\_USER - Ветка пользователя, работающего в системе в данный момент
+3. HKEY\_LOCAL\_MACHINE - Информация про оборудование без привязки к пользователю
+  - Software\\Classes - Копия HKEY\_CLASSES\_ROOT
+4. HKEY\_USERS - Профили всех пользователей, HKEY\_CURRENT\_USER ссылкается на поветку этого пользователя во время его входа. Пользователь получает длинный ID
+  - Default
+5. HKEY\_CURRENT\_CONFIG - Настройки устройств данного сеанса, данные получает из HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\HardwareProfil....
+  - %SystemRoot%\\System32\\Config
+
+Начиная с Windows Vista, существует ветка, в которой хранится информация о производительности системы
+
+Каждый параметр реестра имеет имя, значение и тип значения:
+- REG\_BINARY - Бинарные данные в HEX
+- REG\_DWORD - Integer
+  - Представления:
+    - Bin
+    - Dec
+    - Hex
+  - Обычно работает в Boolean-режиме
+  - Значения:
+    - x32
+    - x64
+- REG\_EXPAND\_SZ - Расширенная строка
+  - Используется для ссылок на файлы
+  - Так же, может содержать системные переменные (%%)
+  - Переменные:
+    - %SystemRoot%
+    - %WinDir% - Windows
+    - %SystemDrive%
+    - %UserProfile%
+    - %ProgramFiles%
+    - %UserName%
+    - %ComputerName% - Имя в сети
+- REG\_MULTI\_SZ - Многострочное значение (списки)
+- REG\_SZ - Текстовая строка
