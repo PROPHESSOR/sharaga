@@ -35,6 +35,7 @@ def zapasBezopasnosti(price, var, const): # FIXME:
 def buildTable(price, var, const, Profit, count=None):
     if count == None:
         count = marginalProfit(price, var, const + Profit)[0] # Количество, чтобы выйти в 0
+
     print 'Строим таблицу продажи', count, 'шт. по цене', price, 'потратив', const, 'в общем +', var, 'на штуту'
     # x = marginalProfit(price, var, const + Profit)[0]
     xprice = price * count
@@ -57,3 +58,6 @@ marginalProfit(PRICE_SELL, PRICE_BUY, CONST + PROFIT)
 buildTable(PRICE_SELL, PRICE_BUY, CONST, PROFIT)
 buildTable(PRICE_SELL, PRICE_BUY, CONST, PROFIT, 8) # 8 x 3000
 # buildTable(PRICE_SELL - PRICE_SELL * 0.12, PRICE_BUY, CONST, PROFIT, 8 + 8 * 0.16) # 8 x 3000
+
+
+# buildTable(1300, 460 + 20, (54000-4000)/5 + 4000*52 + 4000*12 + 40000*12 + 5000*12, 25000, 160*52)
