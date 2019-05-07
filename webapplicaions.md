@@ -34,3 +34,52 @@ DOU.UA
 }
 
 ```
+
+```
+mysqli($databasename, $login, $password);
+mysqli->query($connect, $query);
+
+```
+
+
+```
+CREATE TABLE books(
+    VARCHAR(32) author,
+    VARCHAR(32) title,
+) ENGINE MyISAM;
+
+```
+
+Команды:
+- CREATE
+- ALTER (изменить в таблице)
+- DELETE (удаление строки)
+- DROP (удаление таблицы)
+- DESCRIBE (структура таблицы в админконсоль)
+- GRANT (изменения прав пользователя)
+- BACKUP
+- UPDATE
+- SELECT
+- INSERT
+- LOCK (блокирование записи или таблицы: LOCK TABLE)
+- UNLOCK
+- SHOW (урезанная версия DESCRIBE)
+- TRUNCATE (очищает таблицу)
+- USE (задаёт контекст)
+- RENAME
+
+
+Типы данных:
+- CHAR < 255
+- VARCHAR < 65536
+- TEXT 64k
+- TINYTEXT < 256
+- MEDIUMTEXT 16M
+- LONGTEXT 4G
+- BINARY (небольшие картинки)
+- VARBINARY < 64k
+- BLOB (Binary Large OBject)
+- TINYBLOB
+- MEDIUMBLOB
+- LONGBLOB
+
