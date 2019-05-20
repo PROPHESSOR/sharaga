@@ -280,15 +280,15 @@ COCOMO (**Co**nstructive **Co**de **Mo**del) - Конструктивная мо
 ### Тестирование разработчиком
 
 Существует множество видов тестирования ПО:
-- Unit Testing
-- Integrating Testing - Combined running of one or more classes, packages, components, subsystems, which was created by a group of developers, or developer commands.
-- System Testing (final configuration testing)
+- **Unit Testing**
+- **Integrating Testing** - Combined running of one or more classes, packages, components, subsystems, which was created by a group of developers, or developer commands.
+- **System Testing** (final configuration testing)
 
 ### Ошибки в программах
 
 Как показывает практика, не бывает программ без ошибок и причиной большинства ошибок являются кривые руки разработчика.
 
-- Ошибки железа 1%
+- Ошибки железа 1 -%
 - Криворукость пользователя - 5%
 - ОС - 3%
 - Разработка системы - 15%
@@ -296,6 +296,6 @@ COCOMO (**Co**nstructive **Co**de **Mo**del) - Конструктивная мо
 
 
 Виды ошибок:
-- Синтаксические
+- Синтаксические [Ошибка в синтаксисе языка]
 - Семантические (логические) [Некорректные результаты]
 
