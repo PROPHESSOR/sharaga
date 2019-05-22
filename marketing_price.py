@@ -22,7 +22,7 @@ def KB2RC(KB, TBp, BPp, CMp, duty, OMPp, AZp, overprice, USD=27.06, PDVp=20):
     [PDBp]  - Процент ПДВ
     '''
     print 'KB =', KB
-    TB = KB * percent(TBp)
+    TB = KB * percent(TBp) # TBp
     print 'TB =', TB
     BP = (KB + TB) * percent(BPp) 
     print 'ВП =', BP

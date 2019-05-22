@@ -1,12 +1,13 @@
 # coding: utf-8
 
-PRICE_BUY = 3000
-PRICE_SELL = 10000
-CONST = 21000
-PROFIT = 25000 # Желаемый доход
+PRICE_BUY   = 3000  # Цена покупки
+PRICE_SELL  = 10000 # Цена продажи
+CONST       = 21000 # Постоянные траты
+PROFIT      = 5000  # Желаемый доход
 
 def marginalProfit(price, var, const):
     ''' price - выручка (цена); var - переменные траты; const - постоянные траты '''
+
     print 'Рассчёт маржинального дохода при цене', price, 'пер. тратам', var, 'пост. тратам', const
     md = price - var
     print 'МД =', md
@@ -16,6 +17,7 @@ def marginalProfit(price, var, const):
 
 def getPoint(price, var, const):
     ''' price - цена продажи; var - переменные траты; const - постоянные траты '''
+
     x = marginalProfit(price, var, const)[0]
     out = price * x
     print 'Точка безубыточности =', out
@@ -52,11 +54,11 @@ def buildTable(price, var, const, Profit, count=None):
     cp = profit - duty
     print 'Чист. приб.', cp
 
-marginalProfit(PRICE_SELL, PRICE_BUY, CONST)
-marginalProfit(PRICE_SELL, PRICE_BUY, CONST + PROFIT)
+# marginalProfit(PRICE_SELL, PRICE_BUY, CONST)
+# marginalProfit(PRICE_SELL, PRICE_BUY, CONST + PROFIT)
 
-buildTable(PRICE_SELL, PRICE_BUY, CONST, PROFIT)
-buildTable(PRICE_SELL, PRICE_BUY, CONST, PROFIT, 8) # 8 x 3000
+# buildTable(PRICE_SELL, PRICE_BUY, CONST, PROFIT)
+# buildTable(PRICE_SELL, PRICE_BUY, CONST, PROFIT, 8) # 8 x 3000
 # buildTable(PRICE_SELL - PRICE_SELL * 0.12, PRICE_BUY, CONST, PROFIT, 8 + 8 * 0.16) # 8 x 3000
 
 
