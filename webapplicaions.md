@@ -83,3 +83,37 @@ CREATE TABLE books(
 - MEDIUMBLOB
 - LONGBLOB
 
+```
+$fileStream = fopen('path', rwa) // Для совместимости a+, w+ = a
+```
+
+```
+while (!feof($fileStream)) {
+    $str = fgets($fileStream);
+    echo $str . '<br/>';
+}
+
+```
+
+
+- fopen(path, mode) - Открывает поток файла
+- fgets(stream) - Читает строку для EOL
+- fgetc(stream) - Читает символ
+- fwrite(path, string) - Записать строку в файл (перезаписывает)
+  - \n - Перенос строки
+  - \r - Возврат коретки
+  - \t - Табуляция
+- fsize(path) - Размер файла в байтах
+- fclose(path) - Закрыть файл. Частая причина торможения работы сервера.
+- file\_get\_contents - Считать файл в String переменную.
+
+## Cookies
+
+- setcookie(name, value, [expire {time() + 60 \* 60 \* 24 \* 30}, path, domain, !!secure, !!httponly])
+
+```isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW'])```
+
+- md5 - HEX x32
+- sha1 - HEX x40
+- sha2 - HEX x40
+- hash('ripe128', value) - x32
