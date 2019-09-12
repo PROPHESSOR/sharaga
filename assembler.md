@@ -379,3 +379,30 @@ begin:  MOV AX, @data ; using namespace data
         END begin
 ; }
 ```
+
+`int z = int x + int y` с использованием процедур и директив MOSM32
+
+```
+.386
+
+.model flat, stcall
+
+.data ; namespace data {
+
+; }
+
+.code ; namespace code {
+
+start:  MOV AX, 5
+        MOV BX, 3
+        call AddPr ; stack =  goto AddPr => ... => goto stack
+        ret
+
+    AddPr proc
+        ADD AX, AB
+        ret
+    ArrPr ENDDP
+END start
+
+; }
+```
