@@ -406,3 +406,25 @@ END start
 
 ; }
 ```
+
+Герлянда
+
+ТЗ
+
+10010010
+01001001
+00100100
+
+- 1, 4, 7
+- 2, 5, 8
+- 3, 6
+- time: const
+
+```
+MOV AX, 146
+MVI AX
+CALL delay
+MOV AX, 73
+MVI AX
+CALL delay
+```
