@@ -113,6 +113,35 @@ In general projects I use JavaScript and Python languages depends of the directi
 11. An interpreter is another type of program translator.
 12. performing frequently required everyday tasks.
 
+### Ex. 226
+
+1. Where does your brother work? — He works at an institute.
+2. Had your grandmother slept when you came home yesterday?
+3. What will your brother do tomorrow?
+4. I didn't go to the shop yesterday.
+5. Where had Kate gone when you met her yesterday?
+6. Look at these children: the're skating very vell.
+7. Did you scate last Sunday? — Yes, we skated the whole day last Sunday. We'll scate again next Sunday.
+8. My brother can scate very well. He skate every Sunday.
+9. What're you doing now? — I'm washing the dishes.
+10. What did you do at three o'clock yesterday? — I had dinner.
+11. Are you having dinner now?
+12. Every day the boss enter the office at nine o'clock.
+13. Yesterday the boss entered the office at half past nine.
+14. When will the boss come tomorrow?
+15. At six o'clock yesterday we listened to a veryu interesting lecture.
+16. Whan I entered the office, the secretary had typed some letters.
+17. My friend rang me up at eight o'clock yesterday.
+18. Look! My friends' playing football.
+19. Kate doesn't write letters every day.
+20. Did you see your friends yesterday?
+21. Did your father go on a business trip last month?
+22. What did Nick do yesterday?
+23. When does Nigh get up every morning?
+24. Where will you mother go tomorrow?
+25. I'll invite my friends to come to my place tomorrow.
+26. A disco, which taked place at the club last weekend, had kept people awake half the night.
+
 ### HT
 
 - 3.6 `` r/t
