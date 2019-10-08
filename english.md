@@ -144,5 +144,36 @@ In general projects I use JavaScript and Python languages depends of the directi
 
 ### HT
 
-- 3.6 `` r/t
-- Write `Areas of computers using`
+- 3.6 r/t
+- Write `Areas of computers use`
+
+### Areas of computers use
+
+The computers have a very wide range of uses from microcontrollers using to automate routine tasks to a huge mineframes collecting and calculating BigData.
+They're using in medicine, space and WEB technologies, calculating systems, manufactures and many other areas.
+The most widely used applications for office workers are the word processors and the electronic spreadsheets.
+They help students to keep track of finances and can be invaluable as research tools to calculate table-structured data.
+Also computers used in creating graphic from art sketching tools to complex 3D render packages.
+By now, computers graphic software is even used in the arts at school.
+Another common area of computer use is collecting data to databases. Databases help us to organize our own researches and everyday tasks.
+Games are also popular area of using computers.
+Nowadays many people buy a computer for playing games.
+GameDev is also the great and complex structure that consists of many parts, most of them using computers in their work.
+
+### ...
+
+1. By eight o'clock yesterday I had done my homework and at eight I was playing the piano.
+2. By six o'clock father had come home and at six he was having dinner.
+3. By nine o'clock yesterday grandmother had washed the dishes and at nine she watched TV.
+4. When I met Tom, he was eating an ice cream which he had bought at the corner of the street.
+5. When father came home, we were cooking the mushrooms which we had gathered in the wood.
+6. When I saw Ann, she was sorting the flowes which she had picked in the field.
+7. When I came home yesterday, I saw my little brother had broken my pen and was playing with its pieces.
+8. When I opened the door of the classroom, I saw that the teacher had already come and the pupils were writing a dictation.
+9. When I came home, my sister was reading a book which she had brought from the library.
+10. When mother came home, the children was eating the soup which she had cooked in the morning.
+11. When I rang up Mike, he was still learning the poem which he had began learning at school.
+12. When I looked out of the window, the children were playing with a ball which Pete had brought from home.
+13. By ten o'clock the children had setteled comfortably on the sofa and at ten they were watching a film on TV.
+
+
