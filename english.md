@@ -147,18 +147,23 @@ In general projects I use JavaScript and Python languages depends of the directi
 - 3.6 r/t
 - Write `Areas of computers use`
 
-### Areas of computers use
+### Areas where computers are used
 
-The computers have a very wide range of uses from microcontrollers using to automate routine tasks to a huge mineframes collecting and calculating BigData.
-They're using in medicine, space and WEB technologies, calculating systems, manufactures and many other areas.
-The most widely used applications for office workers are the word processors and the electronic spreadsheets.
-They help students to keep track of finances and can be invaluable as research tools to calculate table-structured data.
-Also computers used in creating graphic from art sketching tools to complex 3D render packages.
-By now, computers graphic software is even used in the arts at school.
-Another common area of computer use is collecting data to databases. Databases help us to organize our own researches and everyday tasks.
-Games are also popular area of using computers.
-Nowadays many people buy a computer for playing games.
-GameDev is also the great and complex structure that consists of many parts, most of them using computers in their work.
+Nowadays computers are used in almost all areas of our life.
+One of the first places where computers appeared is military.
+There they were used for providing communication between bases in different cities and even countries.
+Surely, the main area of computer usage is science.
+But in our modern world, almost everybody has a computer (or ever a few) at home.
+Today you can study, live, work and even rest without taking of from the computer.
+There're many different areas and directions where computers are used.
+Starting with education and scientific calculations ending with playing computer games and even automation of manufacture using microcontrollers.
+Students use the computer to simplify their studying.
+For example they're using word processors instead of copybooks to write down conspects and homework.
+Electronic spreadsheets are used to authomatize many kinds of calculations based on tables.
+Another area of computer usage is medicine where computers are used for diagnostic purposes, creating healing programs and even controlling medical devices.
+Another usage of computers in education is creating presentations and other media resources that help pupils and students in their studying.
+Even our smartphones are small computers that can perform more tasks than just calling or recieving and sending text messages.
+We have a lot of mobile applications that are monitoring status of our health, notifying us about our tasks and events and do more other things.
 
 ### ...
 
