@@ -181,4 +181,44 @@ We have a lot of mobile applications that are monitoring status of our health, n
 12. When I looked out of the window, the children were playing with a ball which Pete had brought from home.
 13. By ten o'clock the children had setteled comfortably on the sofa and at ten they were watching a film on TV.
 
+### HT
 
+- Comparing operating systems
+- 3.62 r/t (w)
+
+
+1. Last summer we lived in the country and went to the river every day.
+2. My sister spent a lot of money yersterday.
+3. She is so upset: she's lost the key to the front door.
+4. **By** the 1st of September all the children **had** returned from the country.
+5. Columbus discovered America 500 years ago.
+6. Columbus didn't know that he'd discovered America.
+7. I've already read five English books.
+8. He had discussed the problem with a lot of people before he took a decision.
+10. She was reading an English book the whole evening yesterday.
+11. I have never been to Greece.
+12. They tould me yesterday that you'd got an exellent mark.
+13. When did you recieve a letter from your friend?
+14. Our grandmother was cooking dinner from twelve till three yesterday.
+15. Look! What beautiful flowers she has bought!
+16. They traveled along the coast of Africa last year.
+17. We haven't seen each other for ages.
+18. They ate all the apples which I'd brought.
+19. When the children (had/were having) dinner, they went for a walk.
+20. Have you ever been to the Niagara Falls?
+21. By brother (was/had being) trained at the stadium from six till eight yesterday.
+22. My sister has bought a pair of nice model shoes this month.
+23. When Nick came from school, his friends were playing in the yard.
+24. I've never been to the Bahamas.
+25. At this time yesterday we were talking about you.
+26. I spoke to my friend yesterday.
+27. Look! Kate has washed all the dishes.
+28. The cat drank all the milk which I'd given it.
+29. They'**d** reached the river **by** sunset.
+30. Only when she was going to bed, she remembered that she had forgoten to ring up her friend.
+31. We've already studied seven English tenses.
+32. He spent two weeks in Scotland two years ago.
+
+### HT
+
+Passive voices
