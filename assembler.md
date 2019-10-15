@@ -147,7 +147,7 @@ STxx - 8 грн/шт
 
 - MOV
 - MOVZX
-- MOvSX
+- MOVSX
 
 > Команды пересылки используются для пересылки (копирования) данных из источника (Source) в ячейку-получателя (Destination).
 
@@ -440,3 +440,45 @@ CALL delay
   - Для чисел со знаком необходимо учитывать SF
 
 - JCXZ - Команда перехода CX=0
+
+### Массивы и циклы
+
+```
+mas dd 1,2,3,4
+```
+
+```
+mas dw 5 dup(0) ; [0, 0, 0, 0, 0]
+```
+
+```
+mas_b label byte
+mas_w label word
+rept 4
+    dw 0f1f0h
+endm
+```
+
+Присваивание одной области памяти разные имена и типы.
+Будет создано 4 word
+
+```
+xor si, si
+cycl:
+    jcxz exit
+    cmp mas[si], 0
+    inc m1
+    inc al
+
+m1: ; next element
+    inc si
+    dec cx
+    jmp cycl
+
+exit:
+    mov ax, 4c00h
+    int 21h
+```
+
+
+```
