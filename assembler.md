@@ -315,7 +315,7 @@ STxx - 8 грн/шт
 ```
 .model tiny
 .code
-crg 100h ; Освобождение первых 256 байт при загрузке файла в память
+org 100h ; Освобождение первых 256 байт при загрузке файла в память
 start   mov ah, 9 ; Номер функции для вывода информации на экран?
         mov dx, offset message
         int 21h
@@ -493,3 +493,55 @@ exit:
 
 ### Обработка массивов с использованием сложных режимов адресации данных
 
+
+### Какой-то там код
+
+```
+org 100h
+
+begin:
+    mov dl, <ASCII>
+    mov ah, 2
+    int 21h
+    ret
+end begin
+
+ret
+```
+
+```
+org 100h
+
+begin:
+    mov ah, 02
+    mov bh, 0
+    mov dh, 12
+    mov dl, 29
+    int 10h
+    mov ax, 98
+    int 29h
+    ret
+end begin                           1
+
+ret
+```
+
+```
+org 100h
+
+begin:
+    mov ax, 0003h
+    int 10h
+    mov ax, 0b800h
+    mov es, ax
+    mov di, 0
+    mov ah, 31
+    mov al, <ASCII>
+    mov es:[di], ax
+    mov ax, 10h
+    int 16h
+    ret
+end begin                           1
+
+ret
+```
