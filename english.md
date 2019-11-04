@@ -222,3 +222,48 @@ We have a lot of mobile applications that are monitoring status of our health, n
 ### HT
 
 Passive voices
+
+### Page 175
+
+- Arithmetic-Logic Unit
+- Digital word
+- Communications network
+- Word processing
+- alphanumeric characters
+- Computer circuitry
+- Control Unit
+- Random-Access Memory
+- Binary numeric system
+- Redundant bit
+- Central Processing Unit
+- Desktop Publishing
+- Initial data
+- Scientific Investigation
+- Intermediate (final) computational results
+- To solve the task by hand
+- The number in question
+- Realized with transistor circults
+- Computer peripherals
+- In digitalized form
+- Reservations system
+- Input/Output units
+- To feed instructions into the computer
+- To effect the operations of
+- To display results
+- To operate in a synchronized manner
+- Computer oscillator
+- Permanent Memory storage
+- Memory cell? Cache
+
+### Passive voice
+
+1. Computers are used by people in a great variety of fields.
+2. Operations are preformed by computers
+3. Computers are used by students to access the Internet.
+4. The timing systems are provided by workstations to TV stations in the race.
+5. Computers were invented by scientists last century.
+6. Computers will be used by managers for administrative purposes.
+7. Two foreign languages are teached by this professor.
+8. The students were asked many questions by the teacher.
+9. Computers are used by airplane pilots to help them control the plane.
+10. The delegation of foreign scientists will be met by us next week.
