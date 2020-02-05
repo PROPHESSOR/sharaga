@@ -17,7 +17,8 @@
 Разработка проектов занимается ряд специалистов, которыми управляет менеджер
 
 Слово "менеджер" происходит от англ "конюх" ("кинуть вперёд"), который управляет лошадьми.
-**Проект** - ограниченный по времени процесс, который имеет определённый начало и конец, а так же может быть ограничен финансированием или достижением результата
+
+> **Проект** - ограниченный по времени процесс, который имеет определённый начало и конец, а так же может быть ограничен финансированием или достижением результата
 
 ### Основные признаки проекта
 
@@ -158,3 +159,71 @@
 На выходе получается готовый продукт.
 
 ### Six Sigma
+
+**04.02.2020**
+
+## Сеточное и календарное планирование проекта
+
+1. Математические матоды планирования проекта
+  - Сеточное планирование проекта
+  - Календарное планирование проекта
+2. Оптимизация проекта
+
+```
+->
+[]
+()
+```
+
+> **Сеточная модель** — Множество элементов, соединённых между собой для описания технологической зависимости отдельных работ и этапов будущих проектов.
+> Основным плановым документом данной модели является сеточный график.
+> 
+> **Сеточный график** — это информационально-динамическая модель, отражающая все логические взаимосвязи и результаты работ, необходимых для достижения конечной цели.
+> **Работа** (в сеточных графиках) — это любой исполнительный процесс или действие, приводящее к достижению цели.
+> **Событие** — это конечный результат предыдущих работ.
+
+На всех сеточных графиках важным показателем является путь.
+
+На любом графике различают:
+- Полный путь (от начального события до конечного)
+- Путь, предшествующий данному событию
+- Путь после данного события
+- Путь между несколькими событиями
+- Критический путь
+
+Графики:
+- Стрелочные графики (начали использоваться в 50-х гг. Обозначают работы в виде стрелок, а связи между ними обозначаются прямоугольниками или кругами, внутри которых пишется порядковый номер)
+- Графики предшесвий (начали использовать в начале 60-х. В отличии от стрелочных, работы подаются в виде прямоугольников, а связи обозначаются стрелками. Работы обозначаются латинскими буквами)
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 128 100" width="128" height="100"><defs><clipPath id="_clipPath_bWnNke9cvyfzaihzedVQkwFO9MbXJmdr"><rect width="128" height="100"/></clipPath></defs><g clip-path="url(#_clipPath_bWnNke9cvyfzaihzedVQkwFO9MbXJmdr)"><g><rect x="10" y="12" width="37" height="17" transform="matrix(1,0,0,1,0,0)" fill="none" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/><g transform="matrix(1,0,0,1,22,13.125)"><text transform="matrix(1,0,0,1,0.172,15.134)" style="font-family:&quot;Open Sans&quot;;font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">A</text></g></g><g><rect x="10" y="70" width="37" height="17" transform="matrix(1,0,0,1,0,0)" fill="none" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/><g transform="matrix(1,0,0,1,22,71.125)"><text transform="matrix(1,0,0,1,0.021,15.134)" style="font-family:&quot;Open Sans&quot;;font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">B</text></g></g><g><rect x="80" y="12" width="37" height="17" transform="matrix(1,0,0,1,0,0)" fill="none" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/><g transform="matrix(1,0,0,1,92,13.125)"><text transform="matrix(1,0,0,1,0.822,14.358)" style="font-family:&quot;Open Sans&quot;;font-weight:400;font-size:18px;font-style:normal;fill:#000000;stroke:none;">C</text></g></g><g><rect x="80" y="70" width="37" height="17" transform="matrix(1,0,0,1,0,0)" fill="none" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/><g transform="matrix(1,0,0,1,92,71.125)"><text transform="matrix(1,0,0,1,0,15.134)" style="font-family:&quot;Open Sans&quot;;font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">D</text></g></g><line x1="29" y1="29" x2="29" y2="70" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="3"/><path d=" M 24 60 L 29 70 L 34 60 Z " fill="rgb(0,0,0)" stroke="none"/><line x1="47" y1="79" x2="80" y2="79" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="3"/><path d=" M 70 84 L 80 79 L 70 74 Z " fill="rgb(0,0,0)" stroke="none"/><line x1="47" y1="21" x2="80" y2="21" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="3"/><path d=" M 70 26 L 80 21 L 70 16 Z " fill="rgb(0,0,0)" stroke="none"/><line x1="100" y1="29" x2="100" y2="70" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="3"/><path d=" M 95 60 L 100 70 L 105 60 Z " fill="rgb(0,0,0)" stroke="none"/></g></svg>
+> График предшествий:
+> Прямоугольники - события, обозначаются 
+> Несколько входящих стрелок - ИЛИ
+
+### Метод ПЕРТ
+
+На основе методов сеточного планирования был разработан метод ПЕРТ (метод оценки и просмотра планов).
+
+Система ПЕРТ может быть реализована как:
+- ПЕРТ/час — определяет резерв времени и критического пути, а так же необходимых корректив по времени.
+- ПЕРТ/затраты — Являет собой дальнейшее развитие предыдущего метода
+
+- Характерные этапы метода ПЕРТ:
+  - Проведение структурного анализа работ
+  - Определение видов работ
+  - Построение сеточный график
+  - Установка зависимости между длительностью работы и её стоимостью
+  - Периодическая корректировка
+  - Контроль за ходом выполнения работ
+
+Этапы сеточного планирования:
+1. Разбивание комплекса работ на отдельные части
+2. Закрепление работ за исполнителем
+3. Описание каждому исполнителю всех работ и событий
+4. Построение первичных сеточных графиков с уточнением содержания работы
+5. Построение полного сеточного графика с отдельных частей
+
+Типы сеточных моделей:
+- Вершины работы (один блок работы ставится во главе)
+- Вершины событий
+- Длительность выполнения работы
