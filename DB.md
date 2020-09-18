@@ -179,6 +179,105 @@ ER модели в основном строятся в:
 
 > Неполная функциональная зависимость - зависимость от части первичного ключа
 
+<hr />
+
+*18.09.2020*
+
+Языки баз данных:
+- По назначению
+  - DDL - Data Definition Language
+    - SQL: CREATE, ALTER, DROP
+  - DML - Data Manipulation Language
+    - SELECT, INSERT UPDATE, DELETE
+  - DAL - Data Access Language
+
+> 4GL (4 Generation Language) - Визуальные конструктуры
+
+Языки программирования бывают
+- Алгоритмические
+- Процедурные (SQL)
+- Разметки
+
+> SQL - процедурный язык программирования
+
+> CREATE DATABASE лишь копирует базу данных model под новым именем
+
+
+Команды
+```
+USE *name* // Переключение на БД
+
+CREATE DATABASE *name* // Создание новой БД
+
+CREATE TABLE *name* (*colname* *type* *(size)?*) *constraints* // Создание таблицы
+```
+
+Constraints (ограничения):
+- NOT NULL
+- UNIQUE - Значение для разных строк не могут повторятся
+  - UNIQUE *attr1*, *attr2* // attr1 + attr2 не могут повторятся
+- CHECK (*condition*) // Задание условия проверки
+- DEFAULT = '' // Значение по умолчанию
+- PRIMARY KEY // Только для NOT NULL, ставит кластерный индекс
+  - PRIMARY KEY (*attr1*, *attr2*) // Для нескольких полей
+- REFERENCES (*table*(*attr*))
+
+
+Trigger functions:
+- IDENTITY(start, step) // = start; += step при **попытке** вставки данных // INT, DECIMAL, BILLING
+
+Functions:
+- NEWID() - На основе MAC адреса и на основе предыдущего GUID
+- NEWSEQUENTIALID() - На основе предыдущего GUID [Recommended]
+
+Варианты обновления данных:
+- CASCADE
+- RESTRICTED
+- SET NULL
+- SET DEFAULT
+- NO ACTION
+
+
+GUID (Global Unique Identifier) - 128 битовый (XXXXXXXX-...)
+
+Кодомусор:
+
+```
+create table mainTab
+    idmainTab int not null identity(1,1) primary key,
+    pole1 varchar(50),
+    pole3 date default=getdate(),
+    pole4 int check pole 4 > 5),
+    pole5 dеcimal(3,2) // 3 цифры, 2 после запятой, слева 3-2
+)
+
+select * from mainTab
+
+# Invalid
+insert into mainTab
+values (!!1!!, 'tsetset', '01/01/2000'/'01.01.2000'/'01-01-2000', !!3!!, 34.5) # month-day-year
+
+# Valid
+insert into mainTab ([pole1], [pole3], [pole4], [pole5])
+values ('tsetset', '01/01/2000'/'01.01.2000'/'01-01-2000', 6, 34.5) # month-day-year
+
+select '2'+3 # 5
+select '2f'+case(3 as char(5)) -- Явное приведение типов
+
+...
+idmainTab int not null
+constraint fk_mainTab
+    foreign key(idmainTab)
+        references mainTab(idmainTab)
+        on delete cascade on update cascade
+
+alter table slaveTab
+    add constraint fk_mainTab
+        foreign key(idmainTab)
+            references mainTab(idmainTab)
+
+```
+
 
 ## Шутки
 
