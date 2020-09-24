@@ -87,3 +87,131 @@ x->0 => sin(x)->x; tg(x)->x; cos(x)->1; asin(sin(x))->x; atg(tg(x))->x
 
 
 '''
+
+# Лаб 24.09.2020
+
+'''
+419a
+
+## Проверка функции на непрерывность
+
+### Вычисление пределов
+
+x / (0) = Infinity
+x / (∞) = 0
+
+Infinity**-n = 0
+
+#### ∞/∞
+
+lim[x->∞](6x5 - 3x3 + 5)/(2x5 - 7x3 + 2) = ∞/∞
+
+- Делим на высший степень (5)
+
+
+lim[x->∞](6x5/x5 - 3x3/x5 + 5/x5)/(2x5/x5 - 7x3/x5 + 2/x5) = ∞/∞
+
+lim[x->∞](6 - 3/x3 + 5/x5)/(2 - 7/x2 + 2/x5) = (6 - 0 + 0) / (2 - 0 + 0) = 6/2 = **3**
+
+Если проще:
+- Выбираем высшую степень
+- Убираем более низшие
+
+lim[x->∞](x5 + 4x + 7) / (4x4 - 4x - 6) = lim x5 / 4x4 = lim x/4 - ∞/5 = ∞
+
+lim[x->∞]((sqrt3(x3 + 5) - sqrt5(x4)) / (sqrt3(x2 + 3) + x)
+
+#                                                   Выбрасываем меньшее (x**(4/5))
+= lim((sqrt3(x3) - sqrt5(x4)) / (sqrt3(x2) + x)) = lim(x - x**(4/5)) / (x**(2/3) + x) = x / x = 1
+
+sqrt5(x3) = x**(3/5)
+
+#### 0/0
+
+- Нужны формулы сокращённого умножения
+
+a^2 - b^2 = (a-b)(a+b)
+a^3 -+ b^3 = (a-+b)(a^2 +- ab + b^2)
+ax^2 + bx + c = a(x-x1)(x-x2)
+
+
+lim[x->-3]((x^3 + 27) / (x^2 - 9)) = 0/0
+x3 + 3^3
+lim((x+3)(x^2 - 3x + 9)) / ((x-3)(x+3)) = lim(x2 - 3x + 9) / (x - 3)
+= ((-3)^2 - 3 * (-3) + 9) / (-3 - 3) = (9+9+9) / -6 = -27 / 06 = -4.5
+
+lim[x->3]((2x2 - x - 15) / (x2 + 3x - 18))
+# Решаем уравнение: x1 = -5/2; x2 = 3
+# Решаем уравнение: x1 = 3; x2 = -6
+lim((2(x+(5/2))(x-3)) / ((x-3)(x+6))=lim(((2x + 5) / (x + 6)) - ((2 * 3 + 5) / (3 + 6)) = 11/9
+
+lim[x->2]((x^3 - 8) / (x^2 - 4)) = lim((~(x - 2)~(x^2 - 2x + 4)) / ~(x-2)~(x+2)) = lim((x^2 + 2x + 4) / (x + 2)) = (4+4+4) / (4) = 12 / 4 = 3
+
+lim[x->5]((3x2 - 14x - 5) / (2x2 - 9x - 5))
+# Решаем уравнение: x1 = -1/3; x2 = 5
+# Решаем уравнение: x1 = -1/2; x2 = 5
+= lim((3 * (x + 1/3) * ~(x - 5)~) / (2 * (x + 1/2) * ~(x - 5)~)) = lim((3 * (x + 1/3)) / (2 * (x + 1/2))) = (3x + 1) / (2x + 1) = 16/11
+
+lim[x->1/3]
+lim((3x2 - 4x + 1) / (9x2 - 6x + 1))
+# Решаем уравнение: x1 = ; x2 = 
+# Решаем уравнение: x1 = ; x2 = 
+
+
+####
+
+lim[x->5]((sqrt(3x + 1) - 4) / (2x - 10))
+# a^2 - b^2
+# Домножаем, чтобы в числителе получилось ... !+ ..., чтобы свести к a^2 - b^2
+lim((sqrt(3x) - 4) * (sqrt(3x + 1) + 4)) / (2x - 10) (sqrt(3x + 1) + 4) = lim( ( (sqrt(3x + 1)**2) - 4^2) / (2x - 10)(sqrt(3x + 1) + 4) = 
+= lim((3x + 1 - 16) / ...(5(3x-20))... = 3/16
+
+...
+
+lim[x->-1]
+(3x2 + 4x + 1)/ = ()/ = ()/
+(sqrt(x+3) - sqrt(5 + 3x))  = ()  = ()
+'''
+
+import math
+
+def fixKnownDivs(num):
+    ''' Переводит числа вроде 0.xxxxxx в текстовые дроби '''
+    if num == (1/3): return '⅓'
+    if num == (-1/3): return '-⅓'
+    if num == (2/3): return '⅔'
+    if num == (-2/3): return '-⅔'
+
+    return str(num)
+
+def sqrtEquation(a, b, c):
+    D = b ** 2 - 4 * a * c
+
+    if D > 0:
+        return [fixKnownDivs((-b + math.sqrt(D)) / (2 * a)), fixKnownDivs((-b - math.sqrt(D)) / (2 * a))]
+    elif D == 0:
+        return [fixKnownDivs(-b / (2 * a))]
+    else:
+        return []
+
+class Container():
+    def __init__(self, components: list = []):
+        self.components = components
+
+    def _sign(self, sign: str, item):
+        self.components.append(sign)
+        self.components.append(item)
+
+    def plus(self, item): return self._sign('+', item)
+    def minus(self, item): return self._sign('-', item)
+    def mul(self, item): return self._sign('*', item)
+    def div(self, item): return self._sign('/', item)
+
+
+class X():
+    def __init__(self):
+        pass
+
+class POW():
+    def __init__(self, container: Container):
+        pass
