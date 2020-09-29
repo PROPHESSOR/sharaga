@@ -30,4 +30,22 @@ Present Continious
 - He's reading
 - Are you reading now?
 
+<hr/>
+
+*29.09.2020*
+
+Homework:
+```
+Dear Teacher,
+I'm fine and I hope that you fell the same.
+In this English lesson we're writing a letter and I'm writing the letter for you.
+It's a good practice for me.
+
+I've classes in Zhytomyr State Polytechnical University to the group IPZk-20-1.
+I'm in a class with six students, they're our subgroup.
+They're all from different cities but almost from Zhytomyr.
+
+I don't have time after univercity to make homeworks so I make them during breaks.
+
+```
 
