@@ -177,12 +177,65 @@ Every minute I think on something so I just need of mental rest.
 - 2A
 - 3A
 
-- dependent preposition
-- past participle
-- present participle
-- gerund
-- infinitive with *to*
-- adjective in comparative form
-- gradable adjective
-- adverbial phrase
+- dependent preposition (залежний прийменник) - 
+- past participle (дієприкметник минулого часу) - 
+- present participle (дієприкметник теперішнього часу) - 
+- gerund (герундій) - 7
+- infinitive with *to* (інфінітив із *to*) - 
+- adjective in comparative form (прикметник у порівняльній формі) - 
+- gradable adjective (градативний прикметник) - 
+- adverbial phrase (дієприслівникове словосполучення) - 11
+- quantifier (квантор) - 
+- auxiliary verb (допоміжне дієслово) - 
+- definite article (визначений артикль) - 
+- indefinite article (невизначена стаття) - 
+- modal verb (модальне дієслово) - 13
+- multi-word verb (багатослівне дієслово) - 4
 
+
+- 2A
+
+1. I can't stand *working* mith music on. (Потому что уже есть особа)
+2. I learnt *how to drive* last year.
+3. I want that the teacher *correct* everthing I say.
+4. I'd rather *eating* out that at home.
+5. I'd like *to travel* abroad this year.
+6. I enjoy *to be* alone.
+7. I like when the teacher tells *repeating* words.
+8. I'd better *spending* more time *to study* or I'll never make progress in English.
+
+- 3A
+
+|1|2|3|
+|---|---|---|
+|1|/I/|th**i**s w**o**m**e**n s**y**stem|
+|2|/i:/|th**e**se l**ea**ve extr**e**mely r**ea**ch|
+|3|/ə/|**ag**ain pr**o**nunciat**io**n|
+|4|/æ/|**a**ctually **a**ngry min**u**tes **a**bsolutely|
+|5|!v|f**u**n m**o**ney c**o**mpletely p**u**blic **gua**rantee|
+|6|u|b**oo**k p**u**ll p**u**sh|
+
+Ex 3 p 64
+
+1. f
+2. h
+3. a
+4. b
+5. c
+6. d
+7. e
+8. g
+
+4
+
+1. picturesque
+2. City-dweller
+3. to remind 
+4. vacations/holidays
+5. journey
+6. leisure time
+7. discovered
+8. travel agent
+
+
+6-12 except 7 (8, 11, 12)
