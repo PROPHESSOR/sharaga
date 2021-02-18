@@ -124,6 +124,8 @@ Every minute I think on something so I just need of mental rest.
 
 *17.02.2021*
 
+![image](https://user-images.githubusercontent.com/19251320/108326723-3f5c8c00-71d3-11eb-9504-3ef5e7b8a45a.png)
+
 - + This weekend I went for a walk
 - - Every weekend I play doom
 - + Last Sunday I worked on sound mixing
