@@ -252,9 +252,7 @@ Ex 3 p 64
 
 <hr>
 
-<a name="08032021"></a>
-
-*08.03.2021* Homework
+<a name="08032021" href="#08032021">*08.03.2021* Homework</a>
 
 ![image](https://user-images.githubusercontent.com/19251320/110529040-70b8df80-8121-11eb-8f2b-00cb905810bb.png)
 
